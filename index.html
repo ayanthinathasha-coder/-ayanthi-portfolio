@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f7f4">
+<meta name="description" content="The personal portfolio of Ayanthi Natasha, an aspiring creative professional interested in content creation, digital media, and design.">
+<title>Ayanthi Natasha | Personal Portfolio</title>
+
+<style>
+:root {
+    --background: #f8f7f4;
+    --white: #ffffff;
+    --black: #202020;
+    --grey: #686868;
+    --gold: #b59a69;
+    --line: #e7e2d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--black);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1080px, 88%);
+    margin: auto;
+}
+
+header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    background: rgba(248,247,244,0.95);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 12px;
+    color: var(--grey);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(43px, 8vw, 76px);
+    line-height: 1.12;
+    font-weight: normal;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero-description {
+    color: var(--grey);
+    max-width: 550px;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 23px;
+    border: 1px solid var(--black);
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.button.primary {
+    background: var(--black);
+    color: var(--white);
+}
+
+.button:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+}
+
+.section {
+    padding: 75px 0;
+    border-top: 1px solid var(--line);
+}
+
+.section-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(30px, 5vw, 43px);
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+.section-text {
+    color: var(--grey);
+    max-width: 700px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 27px;
+}
+
+.card-number {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.skill {
+    padding: 9px 15px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    font-size: 13px;
+}
+
+.portfolio-box {
+    background: var(--black);
+    color: var(--white);
+    padding: 42px;
+    margin-top: 25px;
+}
+
+.portfolio-box p {
+    color: #d0d0d0;
+    margin-bottom: 25px;
+}
+
+.portfolio-box .button {
+    border-color: var(--gold);
+    color: var(--white);
+}
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 490px;
+        padding: 65px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .portfolio-box {
+        padding: 27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="#home" class="logo">AN.</a>
+
+        <nav class="nav-links">
+            <a href="#about">ABOUT</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#portfolio">PORTFOLIO</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <p class="eyebrow">Personal Portfolio · 2026</p>
+
+            <h1>Ayanthi<br><span>Natasha.</span></h1>
+
+            <p class="hero-description">
+                An aspiring creative professional with an interest in
+                content creation, digital media, and design.
+                Always curious, always learning, and ready to grow.
+            </p>
+
+            <div class="buttons">
+                <a href="#about" class="button primary">DISCOVER MORE</a>
+                <a href="#contact" class="button">GET IN TOUCH</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="container">
+        <p class="section-label">01 — About Me</p>
+        <h2>A little about who I am.</h2>
+
+        <p class="section-text">
+            I am a motivated student currently pursuing my foundation
+            studies while exploring opportunities to develop my
+            professional skills. I enjoy creative work, organising
+            ideas, and learning how digital platforms can communicate
+            information in engaging ways.
+
+            I value continuous learning, responsibility, and attention
+            to detail. I look forward to gaining practical experience,
+            contributing fresh ideas, and growing through new challenges.
+        </p>
+    </div>
+</section>
+
+<section class="section" id="education">
+    <div class="container">
+        <p class="section-label">02 — Education</p>
+        <h2>My learning journey.</h2>
+
+        <div class="cards">
+            <article class="card">
+                <p class="card-number">01 / CURRENT STUDIES</p>
+                <h3>University Foundation</h3>
+                <p>
+                    Currently following an English-medium foundation
+                    programme at the Open University of Sri Lanka.
+                </p>
+            </article>
+
+            <article class="card">
+                <p class="card-number">02 / QUALIFICATIONS</p>
+                <h3>Academic Background</h3>
+                <p>
+                    Completed Ordinary Level examinations and continued
+                    Advanced Level studies, with an interest in languages,
+                    mathematics, and science.
+                </p>
+            </article>
+
+            <article class="card">
+                <p class="card-number">03 / LANGUAGE LEARNING</p>
+                <h3>Chinese Language</h3>
+                <p>
+                    HSK Level 2 — passed with a score of 160/200.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <div class="container">
+        <p class="section-label">03 — Skills & Interests</p>
+        <h2>Things I enjoy developing.</h2>
+
+        <p class="section-text">
+            I enjoy exploring creative ideas and developing practical
+            skills that can support my future career.
+        </p>
+
+        <div class="skills">
+            <span class="skill">Creative Design</span>
+            <span class="skill">Content Creation</span>
+            <span class="skill">Digital Media</span>
+            <span class="skill">Visual Presentation</span>
+            <span class="skill">Communication</span>
+            <span class="skill">Creative Writing</span>
+            <span class="skill">Continuous Learning</span>
+            <span class="skill">Language Learning</span>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="creative">
+    <div class="container">
+        <p class="section-label">04 — Creative Interests</p>
+        <h2>Ideas brought to life.</h2>
+
+        <p class="section-text">
+            Outside my academic studies, I enjoy creating digital
+            posts, preparing learning notes, and recreating 3D plans
+            as a hobby. These activities allow me to explore visual
+            presentation, organisation, and creative expression.
+        </p>
+    </div>
+</section>
+
+<section class="section" id="portfolio">
+    <div class="container">
+        <p class="section-label">05 — My Portfolio</p>
+        <h2>A closer look at my work.</h2>
+
+        <p class="section-text">
+            Explore my portfolio to learn more about my background,
+            qualifications, and creative interests.
+        </p>
+
+        <div class="portfolio-box">
+            <h2>My Portfolio PDF</h2>
+            <p>
+                A collection of selected information about me,
+                my education, and my creative interests.
+            </p>
+
+            <!-- Add your public PDF link to the button below. -->
+            <a href="#contact" class="button" target="_self">
+                PORTFOLIO LINK COMING SOON
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <p class="section-label">06 — Contact</p>
+        <h2>Let's connect.</h2>
+
+        <p class="section-text">
+            I welcome opportunities to learn, collaborate,
+            and develop my professional experience.
+        </p>
+
+        <div class="buttons" style="margin-top:25px;">
+            <!-- Replace this with your professional email address. -->
+            <a href="mailto:YOUR-EMAIL@example.com" class="button primary">
+                EMAIL ME
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <span>© 2026 Ayanthi Natasha</span>
+        <span>Personal Portfolio · Designed with purpose.</span>
+    </div>
+</footer>
+
+</body>
+</html>
